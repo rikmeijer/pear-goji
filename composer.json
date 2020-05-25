@@ -1,0 +1,15 @@
+{
+  "name": "rikmeijer/goji",
+  "description": "Everyone's a coach",
+  "minimum-stability": "stable",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Rik Meijer",
+      "email": "hello@rikmeijer.nl"
+    }
+  ],
+  "require": {
+    
+  }
+}
