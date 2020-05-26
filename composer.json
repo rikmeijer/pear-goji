@@ -1,18 +1,22 @@
 {
-  "name": "rikmeijer/goji",
-  "description": "Everyone's a coach",
-  "minimum-stability": "stable",
-  "license": "GPL-3.0-or-later",
-  "authors": [
-    {
-      "name": "Rik Meijer",
-      "email": "hello@rikmeijer.nl"
-    }
-  ],
-  "require": {
-    
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.1"
-  }
+	"name": "rikmeijer/goji",
+	"description": "Everyone's a coach",
+	"minimum-stability": "stable",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Rik Meijer",
+			"email": "hello@rikmeijer.nl"
+		}
+	],
+	"require": {
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"rikmeijer\\goji\\": "src"
+		}
+	}
 }
