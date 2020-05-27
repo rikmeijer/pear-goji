@@ -15,4 +15,9 @@ class Question
     {
         return new self($question);
     }
+
+    public function answer(string $answer): Answer
+    {
+        return new Answer($answer);
+    }
 }
