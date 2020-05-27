@@ -19,7 +19,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"rikmeijer\\goji\\": "src"
+			"rikmeijer\\goji\\": "src",
+			"rikmeijer\\goji\\tests\\": "tests"
 		}
 	}
 }

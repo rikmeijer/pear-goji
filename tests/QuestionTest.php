@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace rikmeijer\goji\tests;
+
 use PHPUnit\Framework\TestCase;
 use rikmeijer\goji\Question;
 
