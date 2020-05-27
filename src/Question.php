@@ -2,7 +2,6 @@
 
 namespace rikmeijer\goji;
 
-
 class Question
 {
     private string $question;
