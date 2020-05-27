@@ -4,14 +4,17 @@ namespace rikmeijer\goji;
 
 class Answer
 {
+    private Question $question;
     private string $answer;
 
-    /**
-     * Answer constructor.
-     * @param string $answer
-     */
-    public function __construct(string $answer)
+    public function __construct(Question $question, string $answer)
     {
+        $this->question = $question;
         $this->answer = $answer;
+    }
+
+    public function belongsTo(Question $question)
+    {
+        return $this->question === $question;
     }
 }

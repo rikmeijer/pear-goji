@@ -6,18 +6,13 @@ class Question
 {
     private string $question;
 
-    private function __construct(string $question)
+    public function __construct(string $question)
     {
         $this->question = $question;
     }
 
-    public static function ask(string $question): self
-    {
-        return new self($question);
-    }
-
     public function answer(string $answer): Answer
     {
-        return new Answer($answer);
+        return new Answer($this, $answer);
     }
 }
