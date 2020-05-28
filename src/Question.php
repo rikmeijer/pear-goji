@@ -11,6 +11,11 @@ class Question
         $this->question = $question;
     }
 
+    public static function ask(string $question)
+    {
+        return new self($question);
+    }
+
     public function answer(string $answer): Answer
     {
         return new Answer($this, $answer);
