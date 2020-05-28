@@ -6,7 +6,7 @@ class Question
 {
     private string $question;
 
-    public function __construct(string $question)
+    private function __construct(string $question)
     {
         $this->question = $question;
     }
