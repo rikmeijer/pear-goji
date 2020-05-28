@@ -5,6 +5,10 @@ namespace rikmeijer\goji;
 class Question
 {
     private string $question;
+    /**
+     * @var Questioner
+     */
+    private Questioner $questioner;
 
     private function __construct(string $question)
     {
@@ -23,6 +27,13 @@ class Question
 
     public function belongsTo(Questioner $questioner): bool
     {
-        return true;
+        return $this->questioner === $questioner;
+    }
+
+    public function withQuestioner(Questioner $questioner)
+    {
+        $question = clone $this;
+        $question->questioner = $questioner;
+        return $question;
     }
 }

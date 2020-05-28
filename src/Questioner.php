@@ -16,6 +16,6 @@ class Questioner
 
     public function ask(string $question): Question
     {
-        return Question::ask($question);
+        return Question::ask($question)->withQuestioner($this);
     }
 }

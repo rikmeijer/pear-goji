@@ -15,4 +15,14 @@ class QuestionerTest extends TestCase
 
         $this->assertTrue($question->belongsTo($questioner));
     }
+
+    public function testWhen_QuestionerAsksQuestion_Expect_QuestionBelongingToThatQuestionerAndNotAnotherQuestioner()
+    {
+        $questioner = new Questioner();
+        $questioner2 = new Questioner();
+
+        $question = $questioner->ask("How many roads must a man walk down, before you can call him a man?");
+
+        $this->assertFalse($question->belongsTo($questioner2));
+    }
 }
