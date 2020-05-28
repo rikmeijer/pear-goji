@@ -14,15 +14,23 @@ class Aspect
         $wrapper = eval(<<<EOT
 return new class extends {$class} {
     private object \$object;
+    private object \$pointcut;
     public function __construct() {}
     public function withObject(object \$object) {
         \$this->object = \$object;
         return \$this;
     }
+    public function withPointcut(\\rikmeijer\\goji\\Pointcut \$pointcut) {
+        \$wrapper = clone \$this;
+        \$wrapper->pointcut = \$pointcut;
+        return \$wrapper;
+    }
 
-//    public function answer(\\rikmeijer\\goji\\Answer \$answer) : \\rikmeijer\\goji\\Answer {
-//        trigger_error("What?");
-//    }
+
+    public function answer(\\rikmeijer\\goji\\Answer \$answer) : \\rikmeijer\\goji\\Answer {
+        isset(\$this->pointcut) && \$this->pointcut->triggerBefore(\$answer);
+        return parent::answer(\$answer);
+    }
 };
 EOT);
         return $wrapper->withObject($object);
