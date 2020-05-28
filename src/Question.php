@@ -20,4 +20,9 @@ class Question
     {
         return new Answer($this, $answer);
     }
+
+    public function belongsTo(Questioner $questioner): bool
+    {
+        return true;
+    }
 }
