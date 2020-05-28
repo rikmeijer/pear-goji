@@ -7,14 +7,20 @@ class Answer
     private Question $question;
     private string $answer;
 
-    public function __construct(Question $question, string $answer)
+    public function __construct(string $answer)
     {
-        $this->question = $question;
         $this->answer = $answer;
     }
 
-    public function belongsTo(Question $question)
+    public function belongsTo(Question $question): bool
     {
-        return $this->question === $question;
+        return isset($this->question) && $this->question === $question;
+    }
+
+    public function withQuestion(Question $question)
+    {
+        $answer = clone $this;
+        $answer->question = $question;
+        return $answer;
     }
 }

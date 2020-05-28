@@ -20,9 +20,9 @@ class Question
         return new self($question);
     }
 
-    public function answer(string $answer): Answer
+    public function answer(Answer $answer): Answer
     {
-        return new Answer($this, $answer);
+        return $answer->withQuestion($this);
     }
 
     public function belongsTo(Questioner $questioner): bool
