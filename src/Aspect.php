@@ -2,12 +2,15 @@
 
 namespace rikmeijer\goji;
 
+use ReflectionObject;
+
 class Aspect
 {
 
     public static function wrap(object $object)
     {
-        $class = get_class($object);
+        $reflection = new ReflectionObject($object);
+        $class = $reflection->getName();
         $wrapper = eval(<<<EOT
 return new class extends {$class} {
     private object \$object;
