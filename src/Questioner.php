@@ -7,13 +7,6 @@ namespace rikmeijer\goji;
 class Questioner
 {
 
-    /**
-     * Questioner constructor.
-     */
-    public function __construct()
-    {
-    }
-
     public function ask(string $question): Question
     {
         return Question::ask($question)->withQuestioner($this);
