@@ -1,12 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace rikmeijer\goji\tests;
+namespace rikmeijer\🍐goji\tests;
 
 use PHPUnit\Framework\TestCase;
-use rikmeijer\goji\Answer;
-use rikmeijer\goji\Aspect;
-use rikmeijer\goji\Pointcut;
-use rikmeijer\goji\Question;
+use rikmeijer\🍐goji\{Answer, Aspect, Pointcut, Question};
 
 
 class QuestionTest extends TestCase
