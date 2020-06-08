@@ -10,3 +10,4 @@ Ook kunnen vragenstellers aangeven hoe ze het contact hebben ervaren met een coa
 Mentoren zijn speciale coaches. Allereerst is hierbij sprake van een wederzijds erkende relatie. Beiden moeten instemmen. Welke speciale functionaliteit hieraan wordt gekoppeld moet nog worden bepaald.
 De website wordt initieel Nederlands, vertaling gebeurt alleen als hiervoor de juiste mensen kunnen meehelpen.
 Het systeem wordt ook decentraal. dat betekent dat geen enkele instantie de absolute waarheid of alle data van vragenstellers of coaches bezit.
+Mogelijkheid om je verhalen te delen om anderen te inspireren
