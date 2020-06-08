@@ -1,4 +1,5 @@
-# 🍐goji
+# 𓀁
+
 Everyone's a coach.
 
 P2P coaching platform
