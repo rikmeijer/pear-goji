@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace rikmeijer\🍐goji\tests;
+namespace rikmeijer\𓀁\tests;
 
 use PHPUnit\Framework\TestCase;
-use rikmeijer\🍐goji\Questioner;
+use rikmeijer\𓀁\Questioner;
 
 class QuestionerTest extends TestCase
 {

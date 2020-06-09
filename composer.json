@@ -1,5 +1,5 @@
 {
-	"name": "rikmeijer/pear-goji",
+	"name": "rikmeijer/\uD80C\uDC01",
 	"description": "Everyone's a coach",
 	"minimum-stability": "stable",
 	"license": "GPL-3.0-or-later",
@@ -19,8 +19,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"rikmeijer\\🍐goji\\": "src",
-			"rikmeijer\\🍐goji\\tests\\": "tests"
+			"rikmeijer\\𓀁\\": "src",
+			"rikmeijer\\𓀁\\tests\\": "tests"
 		}
 	}
 }

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace rikmeijer\🍐goji;
+namespace rikmeijer\𓀁;
 
 use ReflectionObject;
 
@@ -20,14 +20,14 @@ return new class extends {$class} {
         \$this->object = \$object;
         return \$this;
     }
-    public function withPointcut(\\rikmeijer\\🍐goji\\Pointcut \$pointcut) {
+    public function withPointcut(\\rikmeijer\\𓀁\\Pointcut \$pointcut) {
         \$wrapper = clone \$this;
         \$wrapper->pointcut = \$pointcut;
         return \$wrapper;
     }
 
 
-    public function answer(\\rikmeijer\\🍐goji\\Answer \$answer) : \\rikmeijer\\🍐goji\\Answer {
+    public function answer(\\rikmeijer\\𓀁\\Answer \$answer) : \\rikmeijer\\𓀁\\Answer {
         isset(\$this->pointcut) && \$this->pointcut->triggerBefore(\$answer);
         return parent::answer(\$answer);
     }

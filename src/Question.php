@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace rikmeijer\🍐goji;
+namespace rikmeijer\𓀁;
 
 class Question
 {
