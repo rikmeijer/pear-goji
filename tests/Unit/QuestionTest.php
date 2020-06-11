@@ -1,14 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace rikmeijer\𓀁\tests;
+namespace rikmeijer\𓀁\tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use rikmeijer\𓀁\{Answer, Aspect, Pointcut, Question};
-
+use rikmeijer\𓀁\Answer;
+use rikmeijer\𓀁\Aspect;
+use rikmeijer\𓀁\Pointcut;
+use rikmeijer\𓀁\Question;
 
 class QuestionTest extends TestCase
 {
-
     public function testQuestionCanBeAsked()
     {
         $question = Question::ask("How many roads must a man walk down, before you can call him a man?");
@@ -28,11 +29,12 @@ class QuestionTest extends TestCase
         $question = Question::ask("How many roads must a man walk down, before you can call him a man?");
         $question = Aspect::wrap($question);
         $triggered = false;
+        $orignalAnswer = new Answer('dd');
 
         $this->assertInstanceOf(Question::class, $question);
-        $question->withPointcut((new Pointcut('answer'))->withBefore(function (Answer $answer) use (&$triggered) {
-            $triggered = true;
-        }))->answer(new Answer('dd'));
+        $question->withPointcut((new Pointcut())->withBefore(function (Answer $answer) use (&$triggered, $orignalAnswer) {
+            $triggered = ($orignalAnswer === $answer);
+        }))->answer($orignalAnswer);
 
         $this->assertTrue($triggered);
     }
