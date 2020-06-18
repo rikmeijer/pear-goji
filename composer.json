@@ -10,9 +10,9 @@
 		}
 	],
 	"require": {
+		"ext-json": "*"
 	},
 	"require-dev": {
-		"ext-com_dotnet": "*",
 		"phpunit/phpunit": "^9.1",
 		"guzzlehttp/guzzle": "^6.5",
 		"squizlabs/php_codesniffer": "3.5.5",

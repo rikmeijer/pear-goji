@@ -42,6 +42,8 @@ class SanityTest extends TestCase
     {
         $response = $this->http->get('/', []);
         $this->assertEquals(200, $response->getStatusCode());
+        $json = json_decode($response->getBody()->getContents());
+        $this->assertEquals('ok', $json->status);
     }
 
     protected function setUp(): void
