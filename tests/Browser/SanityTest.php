@@ -40,7 +40,7 @@ class SanityTest extends TestCase
 
     public function testAPIAvailable(): void
     {
-        $response = $this->http->get('/', []);
+        $response = $this->http->get('/', [])->withAddedHeader('Accept', 'application/json');
         $this->assertEquals(200, $response->getStatusCode());
         $json = json_decode($response->getBody()->getContents());
         $this->assertEquals('ok', $json->status);
