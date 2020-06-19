@@ -53,8 +53,7 @@ class SanityTest extends TestCase
         ]);
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals('application/json', $response->getHeader('Content-Type')[0]);
-        $json = json_decode($response->getBody()->getContents());
-        $this->assertEquals('ok', $json->status);
+        $this->assertEquals('ok', json_decode($response->getBody()->getContents())->status);
     }
 
     public function testAPI_When_AcceptTextHTML_Expect_HTMLResponse(): void
