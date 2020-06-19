@@ -1,3 +1,6 @@
 <?php declare(strict_types=1);
-header('Content-Type: application/json');
-exit('{"status":"ok"}');
+if (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false) {
+    header('Content-Type: application/json');
+    exit('{"status":"ok"}');
+}
+?><!DOCTYPE html>

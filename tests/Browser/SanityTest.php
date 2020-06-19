@@ -40,21 +40,28 @@ class SanityTest extends TestCase
 
     public function testAPIAvailable(): void
     {
-        $response = $this->http->get('/', [])->withAddedHeader('Accept', 'application/json');
+        $response = $this->http->get('/', [
+            'headers' => [
+                'Accept' => 'application/json'
+            ]
+        ]);
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals('application/json', $response->getHeader('Content-Type')[0]);
         $json = json_decode($response->getBody()->getContents());
         $this->assertEquals('ok', $json->status);
     }
 
-
-//    public function testAPI_When_AcceptTextHTML_Expect_HTMLResponse(): void
-//    {
-//        $response = $this->http->get('/', [])->withAddedHeader('Accept', 'application/json');
-//        $this->assertEquals(200, $response->getStatusCode());
-//        $json = json_decode($response->getBody()->getContents());
-//        $this->assertEquals('ok', $json->status);
-//    }
+    public function testAPI_When_AcceptTextHTML_Expect_HTMLResponse(): void
+    {
+        $response = $this->http->get('/', [
+            'headers' => [
+                'Accept' => 'text/html'
+            ]
+        ]);
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertStringStartsWith('text/html', $response->getHeader('Content-Type')[0]);
+        $this->assertStringStartsWith('<!DOCTYPE html>', $response->getBody()->getContents());
+    }
 
     protected function setUp(): void
     {
