@@ -6,10 +6,18 @@ namespace rikmeijer\𓀁\tests;
 class Server
 {
     private $httpd;
+    private string $phpBinary;
+    private string $bindTo;
+
+    public function __construct(string $phpBinary, string $bindTo)
+    {
+        $this->phpBinary = $phpBinary;
+        $this->bindTo = $bindTo;
+    }
 
     public function start($root): void
     {
-        $command = 'C:\php\7.4.6\php.exe -S 127.0.0.1:8080 -t ' . escapeshellarg($root . DIRECTORY_SEPARATOR . 'public');
+        $command = escapeshellcmd($this->phpBinary) . ' -S ' . escapeshellarg($this->bindTo) . ' -t ' . escapeshellarg($root . DIRECTORY_SEPARATOR . 'public');
         $descriptorspec = array(
             0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
             1 => array("pipe", sys_get_temp_dir() . DIRECTORY_SEPARATOR . "stdout.txt", "a"),  // stdout is a pipe that the child will write to
