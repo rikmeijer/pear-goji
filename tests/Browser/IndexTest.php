@@ -15,9 +15,7 @@ class IndexTest extends BrowserTest
     protected function setUp(): void
     {
         parent::setUp();
-        $this->setHost('localhost');
-        $this->setPort(4444);
-        $this->setBrowserUrl('http://127.0.0.1:8080');
+        $this->setBrowserUrl('http://' . $_ENV['PHP_SERVER_ADDRESS']);
         $this->setBrowser('firefox');
     }
 
