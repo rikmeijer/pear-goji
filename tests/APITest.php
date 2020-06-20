@@ -14,7 +14,7 @@ abstract class APITest extends TestCase
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
-        self::$httpd = new Server('C:\php\7.4.6\php.exe', '127.0.0.1:8080');
+        self::$httpd = new Server($_ENV['PHP_BINARY'], $_ENV['PHP_SERVER_ADDRESS']);
         self::$httpd->start(dirname(__DIR__));
     }
 
