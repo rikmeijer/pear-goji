@@ -19,7 +19,7 @@ abstract class BrowserTest extends Selenium2TestCase
         self::$httpd->start(dirname(__DIR__));
 
 
-        self::$selenium = proc_open('"C:\Program Files\Java\jdk-14.0.1\bin\java.exe" -jar C:\php\selenium-server-standalone-3.141.59.jar', array(
+        self::$selenium = proc_open('java -jar C:\php\selenium-server-standalone-3.141.59.jar', array(
             0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
             1 => array("pipe", sys_get_temp_dir() . DIRECTORY_SEPARATOR . "selenium-stdout.txt", "a"),  // stdout is a pipe that the child will write to
             2 => array("file", sys_get_temp_dir() . DIRECTORY_SEPARATOR . "selenium-error-output.txt", "a") // stderr is a file to write to
