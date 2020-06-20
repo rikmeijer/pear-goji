@@ -26,7 +26,7 @@ abstract class APITest extends TestCase
 
     protected function setUp(): void
     {
-        $this->http = new Client(['base_uri' => 'http://127.0.0.1:8080', 'timeout' => 2.0]);
+        $this->http = new Client(['base_uri' => 'http://' . $_ENV['PHP_SERVER_ADDRESS'], 'timeout' => 2.0]);
     }
 
     protected function tearDown(): void
