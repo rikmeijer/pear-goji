@@ -8,6 +8,7 @@ class Server
     private $httpd;
     private string $phpBinary;
     private string $bindTo;
+    private array $pipes = [];
 
     public function __construct(string $phpBinary, string $bindTo)
     {
@@ -18,12 +19,12 @@ class Server
     public function start($root): void
     {
         $command = escapeshellcmd($this->phpBinary) . ' -S ' . escapeshellarg($this->bindTo) . ' -t ' . escapeshellarg($root . DIRECTORY_SEPARATOR . 'public');
-        $descriptorspec = array(
-            0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
-            1 => array("pipe", sys_get_temp_dir() . DIRECTORY_SEPARATOR . "stdout.txt", "a"),  // stdout is a pipe that the child will write to
-            2 => array("file", sys_get_temp_dir() . DIRECTORY_SEPARATOR . "error-output.txt", "a") // stderr is a file to write to
-        );
-        $this->httpd = proc_open($command, $descriptorspec, $pipes, $root);
+        $descriptorspec = [
+            0 => ["pipe", "r"],
+            1 => ["pipe", "a"],
+            2 => ["pipe", "a"]
+        ];
+        $this->httpd = proc_open($command, $descriptorspec, $this->pipes, $root);
     }
 
     public function stop(): void
