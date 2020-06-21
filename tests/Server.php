@@ -13,7 +13,8 @@ class Server
     public function __construct(string $phpBinary, string $bindTo)
     {
         $this->phpBinary = $phpBinary;
-        $this->bindTo = $bindTo;
+        $url = parse_url($bindTo);
+        $this->bindTo = $url['host'] . ':' . $url['port'];
     }
 
     public function start($root): void
