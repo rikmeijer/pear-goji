@@ -4,3 +4,8 @@ if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'],
     exit('{"status":"ok"}');
 }
 ?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>𓀁</title>
+</head>
+</html>

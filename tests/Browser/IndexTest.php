@@ -9,6 +9,6 @@ class IndexTest extends BrowserTest
     public function testIndexAvailable(): void
     {
         $this->driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
-        $this->assertEquals('', $this->driver->getTitle());
+        $this->assertEquals('𓀁', $this->driver->getTitle());
     }
 }
