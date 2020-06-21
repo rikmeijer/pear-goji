@@ -3,13 +3,18 @@
 
 namespace rikmeijer\𓀁\tests;
 
-use PHPUnit\Extensions\Selenium2TestCase;
+use Facebook\WebDriver\Remote\DesiredCapabilities;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Facebook\WebDriver\WebDriver;
+use PHPUnit\Framework\TestCase;
 
-abstract class BrowserTest extends Selenium2TestCase
+abstract class BrowserTest extends TestCase
 {
     public static Server $httpd;
-    public static $selenium;
-    public static array $seleniumPipes = [];
+    public static $geckodriver;
+    public static array $geckodriverPipes = [];
+
+    protected WebDriver $driver;
 
     public static function setUpBeforeClass(): void
     {
@@ -20,11 +25,23 @@ abstract class BrowserTest extends Selenium2TestCase
         self::$httpd->start(dirname(__DIR__));
 
 
-        self::$selenium = proc_open($_ENV['JAVA_BIN'] . ' -jar ' . $_ENV['SELENIUM_JAR'], [
+        self::$geckodriver = proc_open($_ENV['GECKODRIVER_BIN'], [
             0 => ["pipe", "r"],
             1 => ["pipe", "a"],
             2 => ["pipe", "a"]
-        ], self::$seleniumPipes, $root);
+        ], self::$geckodriverPipes, $root);
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->driver = RemoteWebDriver::create('http://localhost:4444', DesiredCapabilities::firefox());
+    }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        $this->driver->close();
     }
 
     public static function tearDownAfterClass(): void
@@ -32,8 +49,8 @@ abstract class BrowserTest extends Selenium2TestCase
         parent::tearDownAfterClass();
         self::$httpd->stop();
 
-        self::proc_kill(self::$selenium);
-        proc_close(self::$selenium);
+        self::proc_kill(self::$geckodriver);
+        proc_close(self::$geckodriver);
     }
 
     public static function proc_kill($process): bool
