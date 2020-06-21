@@ -33,6 +33,6 @@ class SanityTest extends APITest
         ]);
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertStringStartsWith('text/html', $response->getHeader('Content-Type')[0]);
-        $this->assertStringStartsWith('<!DOCTYPE html>', $response->getBody()->getContents());
+        $this->assertStringStartsWith('<!doctype html>', $response->getBody()->getContents());
     }
 }
