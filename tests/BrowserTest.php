@@ -14,7 +14,7 @@ abstract class BrowserTest extends TestCase
     public static $geckodriver;
     public static array $geckodriverPipes = [];
 
-    protected WebDriver $driver;
+    public static WebDriver $driver;
 
     public static function setUpBeforeClass(): void
     {
@@ -24,28 +24,29 @@ abstract class BrowserTest extends TestCase
         self::$httpd = new Server($_ENV['PHP_BINARY'], $_ENV['PHP_SERVER_ADDRESS']);
         self::$httpd->start(dirname(__DIR__));
 
-
         self::$geckodriver = proc_open($_ENV['GECKODRIVER_BIN'], [
             0 => ["pipe", "r"],
             1 => ["pipe", "a"],
             2 => ["pipe", "a"]
         ], self::$geckodriverPipes, $root);
+
+        self::$driver = RemoteWebDriver::create('http://localhost:4444', DesiredCapabilities::firefox());
     }
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->driver = RemoteWebDriver::create('http://localhost:4444', DesiredCapabilities::firefox());
     }
 
     protected function tearDown(): void
     {
         parent::tearDown();
-        $this->driver->close();
     }
 
     public static function tearDownAfterClass(): void
     {
+        self::$driver->close();
+
         parent::tearDownAfterClass();
         self::$httpd->stop();
 

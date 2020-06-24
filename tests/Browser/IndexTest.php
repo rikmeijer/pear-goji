@@ -2,13 +2,21 @@
 
 namespace rikmeijer\𓀁\tests\Browser;
 
+use Facebook\WebDriver\WebDriverBy;
 use rikmeijer\𓀁\tests\BrowserTest;
 
 class IndexTest extends BrowserTest
 {
     public function testIndexAvailable(): void
     {
-        $this->driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
-        $this->assertEquals('𓀁', $this->driver->getTitle());
+        self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
+        $this->assertEquals('𓀁', self::$driver->getTitle());
+    }
+
+    public function testWhen_VisitingIndex_Expect_TextFieldAvailable(): void
+    {
+        self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
+        $searchBox = self::$driver->findElement(WebDriverBy::cssSelector('input[type=text]'));
+        $this->assertEquals('Stel een vraag', $searchBox->getAttribute('placeholder'));
     }
 }
