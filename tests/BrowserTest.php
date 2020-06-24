@@ -64,4 +64,9 @@ abstract class BrowserTest extends TestCase
             return proc_terminate($process);
         }
     }
+
+    protected function visit(string $path)
+    {
+        self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . $path);
+    }
 }

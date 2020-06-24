@@ -9,13 +9,13 @@ class IndexTest extends BrowserTest
 {
     public function testWhen_VisitingFrontPage_Expect_TitleToBeMaWiHaToMo(): void
     {
-        self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
+        $this->visit('/');
         $this->assertEquals('𓀁', self::$driver->getTitle());
     }
 
     public function testWhen_VisitingIndex_Expect_TextFieldAvailable(): void
     {
-        self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
+        $this->visit('/');
         $searchBox = self::$driver->findElement(WebDriverBy::cssSelector('input[type=text]'));
         $this->assertEquals('Stel een vraag', $searchBox->getAttribute('placeholder'));
     }
