@@ -7,7 +7,7 @@ use rikmeijer\𓀁\tests\BrowserTest;
 
 class IndexTest extends BrowserTest
 {
-    public function testIndexAvailable(): void
+    public function testWhen_VisitingFrontPage_Expect_TitleToBeMaWiHaToMo(): void
     {
         self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . '/');
         $this->assertEquals('𓀁', self::$driver->getTitle());
