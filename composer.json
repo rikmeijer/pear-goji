@@ -11,9 +11,11 @@
 	],
 	"require": {
 		"ext-json": "*",
+		"ext-tidy": "*",
 		"vlucas/phpdotenv": "5.0.0"
 	},
 	"require-dev": {
+		"roave/security-advisories": "dev-master",
 		"phpunit/phpunit": "^9",
 		"php-webdriver/webdriver": "^1.8",
 		"guzzlehttp/guzzle": "^6.5",

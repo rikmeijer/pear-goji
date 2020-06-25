@@ -5,12 +5,19 @@ namespace rikmeijer\𓀁\tests\Browser;
 use Facebook\WebDriver\WebDriverBy;
 use rikmeijer\𓀁\tests\BrowserTest;
 
-class IndexTest extends BrowserTest
+final class IndexTest extends BrowserTest
 {
     public function testWhen_VisitingFrontPage_Expect_TitleToBeMaWiHaToMo(): void
     {
         $this->visit('/');
         $this->assertEquals('𓀁', self::$driver->getTitle());
+    }
+
+    public function testWhen_VisitingFrontPage_Expect_HTML5isW3CCompatible(): void
+    {
+        $client = $this->visit('/');
+        $errors = $client->validate();
+        $this->assertEmpty($errors, $errors);
     }
 
     public function testWhen_VisitingIndex_Expect_TextFieldAvailable(): void
