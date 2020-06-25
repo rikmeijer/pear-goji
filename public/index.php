@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php /** @noinspection GlobalVariableUsageInspection */ declare(strict_types=1);
 if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false) {
     header('Content-Type: application/json');
     exit('{"status":"ok"}');
@@ -8,5 +8,7 @@ if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'],
 <head>
     <title>𓀁</title>
 </head>
-<label for="query"></label><input type="text" id="query" placeholder="Stel een vraag">
+<body>
+<label for="query">Label</label><input type="text" id="query" placeholder="Stel een vraag">
+</body>
 </html>

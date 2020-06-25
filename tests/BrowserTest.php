@@ -80,7 +80,7 @@ abstract class BrowserTest extends TestCase
                 $this->response = $response;
             }
 
-            final public function validate(): string
+            final public function validate(): ?string
             {
                 $tidy = new tidy();
                 $tidy->parseString($this->response->getBody()->getContents(), [], 'utf8');

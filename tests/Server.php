@@ -5,6 +5,9 @@ namespace rikmeijer\𓀁\tests;
 
 class Server
 {
+    /**
+     * @var resource $httpd
+     */
     private $httpd;
     private string $phpBinary;
     private string $bindTo;
@@ -17,9 +20,13 @@ class Server
         $this->bindTo = $url['host'] . ':' . $url['port'];
     }
 
-    public function start($root): void
+    final public function start(string $root): void
     {
-        $command = escapeshellcmd($this->phpBinary) . ' -S ' . escapeshellarg($this->bindTo) . ' -t ' . escapeshellarg($root . DIRECTORY_SEPARATOR . 'public');
+        $arguments = [
+            '-S ' . escapeshellarg($this->bindTo),
+            '-t ' . escapeshellarg($root . DIRECTORY_SEPARATOR . 'public')
+        ];
+        $command = escapeshellcmd($this->phpBinary) . ' ' . implode(' ', $arguments);
         $descriptorspec = [
             0 => ["pipe", "r"],
             1 => ["pipe", "a"],
@@ -28,7 +35,7 @@ class Server
         $this->httpd = proc_open($command, $descriptorspec, $this->pipes, $root);
     }
 
-    public function stop(): void
+    final public function stop(): void
     {
         if (strncasecmp(PHP_OS, 'WIN', 3) == 0) {
             $status = proc_get_status($this->httpd);
