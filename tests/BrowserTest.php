@@ -9,8 +9,6 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriver;
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
-use tidy;
 
 abstract class BrowserTest extends TestCase
 {
@@ -67,25 +65,9 @@ abstract class BrowserTest extends TestCase
         proc_close(self::$geckodriver);
     }
 
-    final protected function visit(string $path): object
+    final protected function visit(string $path): Visitor
     {
         self::$driver->navigate()->to($_ENV['PHP_SERVER_ADDRESS'] . $path);
-        return new class(self::$driver, $this->http->get($path)) {
-            private WebDriver $driver;
-            private ResponseInterface $response;
-
-            public function __construct(WebDriver $driver, ResponseInterface $response)
-            {
-                $this->driver = $driver;
-                $this->response = $response;
-            }
-
-            final public function validate(): ?string
-            {
-                $tidy = new tidy();
-                $tidy->parseString($this->response->getBody()->getContents(), [], 'utf8');
-                return $tidy->errorBuffer;
-            }
-        };
+        return new Visitor(self::$driver, $this->http->get($path));
     }
 }
