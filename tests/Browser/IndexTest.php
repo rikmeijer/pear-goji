@@ -15,8 +15,8 @@ final class IndexTest extends BrowserTest
 
     public function testWhen_VisitingFrontPage_Expect_HTML5isW3CCompatible(): void
     {
-        $client = $this->visit('/');
-        $this->assertNull($client->validate());
+        $visitor = $this->visit('/');
+        $this->assertNull($visitor->validate());
     }
 
     public function testWhen_VisitingIndex_Expect_TextFieldAvailable(): void
