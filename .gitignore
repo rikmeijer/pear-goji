@@ -2,3 +2,4 @@ vendor
 /.phpunit.result.cache
 /.php_cs.cache
 .env
+!/tests/_support/_support/
