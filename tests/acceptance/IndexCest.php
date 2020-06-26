@@ -4,7 +4,7 @@ namespace rikmeijer\𓀁\tests\acceptance;
 
 use AcceptanceTester;
 
-final class FirstCest
+final class IndexCest
 {
     public function _before(AcceptanceTester $I): void
     {
