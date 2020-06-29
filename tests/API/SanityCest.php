@@ -22,6 +22,7 @@ final class SanityCest
         $I->haveHttpHeader('Accept', 'application/json');
         $I->sendGET('/');
         $I->seeResponseCodeIs(HttpCode::OK);
+        $I->seeHttpHeader('Content-Type', 'application/json');
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(['status' => 'ok']);
     }
