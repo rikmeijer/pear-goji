@@ -1,9 +1,5 @@
 <?php declare(strict_types=1);
 
-/**
- * @return Bootstrap
- */
-
 use rikmeijer\Bootstrap\Bootstrap;
 
 // include composer autoloader
