@@ -12,14 +12,15 @@
 	"require": {
 		"ext-json": "*",
 		"ext-tidy": "*",
-		"vlucas/phpdotenv": "5.0.0"
+		"vlucas/phpdotenv": "^5.0.0",
+		"twig/twig": "^3.0.3"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
 		"codeception/codeception": "^4",
 		"squizlabs/php_codesniffer": "3.5.5",
-		"phpmd/phpmd": "2.8.2",
-		"friendsofphp/php-cs-fixer": "2.16.3",
+		"phpmd/phpmd": "^2.8.2",
+		"friendsofphp/php-cs-fixer": "^2.16.3",
 		"codeception/module-phpbrowser": "^1.0.0",
 		"codeception/module-asserts": "^1.0.0",
 		"codeception/module-webdriver": "^1.1",
