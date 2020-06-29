@@ -4,8 +4,6 @@ use rikmeijer\Bootstrap\Bootstrap;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-return function (Bootstrap $bootstrap): Environment {
-
-    $loader = new FilesystemLoader($bootstrap->config('TWIG')['templates']);
-    return new Environment($loader);
+return static function (Bootstrap $bootstrap, array $configuration): Environment {
+    return new Environment(new FilesystemLoader($configuration['templates']));
 };
