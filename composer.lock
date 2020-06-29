@@ -4,135 +4,8 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "e7e1f6f7eab5a406df973dd92e551eb2",
+  "content-hash": "b857f59d32d1a3257c51c591b4716c53",
   "packages": [
-    {
-      "name": "graham-campbell/result-type",
-      "version": "v1.0.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/GrahamCampbell/Result-Type.git",
-        "reference": "7e279d2cd5d7fbb156ce46daada972355cea27bb"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/7e279d2cd5d7fbb156ce46daada972355cea27bb",
-        "reference": "7e279d2cd5d7fbb156ce46daada972355cea27bb",
-        "shasum": ""
-      },
-      "require": {
-        "php": "^7.0|^8.0",
-        "phpoption/phpoption": "^1.7.3"
-      },
-      "require-dev": {
-        "phpunit/phpunit": "^6.5|^7.5|^8.5|^9.0"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "1.0-dev"
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "GrahamCampbell\\ResultType\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Graham Campbell",
-          "email": "graham@alt-three.com"
-        }
-      ],
-      "description": "An Implementation Of The Result Type",
-      "keywords": [
-        "Graham Campbell",
-        "GrahamCampbell",
-        "Result Type",
-        "Result-Type",
-        "result"
-      ],
-      "funding": [
-        {
-          "url": "https://github.com/GrahamCampbell",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/graham-campbell/result-type",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2020-04-13T13:17:36+00:00"
-    },
-    {
-      "name": "phpoption/phpoption",
-      "version": "1.7.4",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/schmittjoh/php-option.git",
-        "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
-        "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
-        "shasum": ""
-      },
-      "require": {
-        "php": "^5.5.9 || ^7.0 || ^8.0"
-      },
-      "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.3",
-        "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "1.7-dev"
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "PhpOption\\": "src/PhpOption/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "Apache-2.0"
-      ],
-      "authors": [
-        {
-          "name": "Johannes M. Schmitt",
-          "email": "schmittjoh@gmail.com"
-        },
-        {
-          "name": "Graham Campbell",
-          "email": "graham@alt-three.com"
-        }
-      ],
-      "description": "Option Type for PHP",
-      "keywords": [
-        "language",
-        "option",
-        "php",
-        "type"
-      ],
-      "funding": [
-        {
-          "url": "https://github.com/GrahamCampbell",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2020-06-07T10:40:07+00:00"
-    },
     {
       "name": "symfony/polyfill-ctype",
       "version": "v1.17.1",
@@ -287,86 +160,6 @@
       "time": "2020-06-06T08:46:27+00:00"
     },
     {
-      "name": "symfony/polyfill-php80",
-      "version": "v1.17.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/polyfill-php80.git",
-        "reference": "4a5b6bba3259902e386eb80dd1956181ee90b5b2"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/4a5b6bba3259902e386eb80dd1956181ee90b5b2",
-        "reference": "4a5b6bba3259902e386eb80dd1956181ee90b5b2",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.0.8"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "1.17-dev"
-        },
-        "thanks": {
-          "name": "symfony/polyfill",
-          "url": "https://github.com/symfony/polyfill"
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "Symfony\\Polyfill\\Php80\\": ""
-        },
-        "files": [
-          "bootstrap.php"
-        ],
-        "classmap": [
-          "Resources/stubs"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Ion Bazan",
-          "email": "ion.bazan@gmail.com"
-        },
-        {
-          "name": "Nicolas Grekas",
-          "email": "p@tchwork.com"
-        },
-        {
-          "name": "Symfony Community",
-          "homepage": "https://symfony.com/contributors"
-        }
-      ],
-      "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-      "homepage": "https://symfony.com",
-      "keywords": [
-        "compatibility",
-        "polyfill",
-        "portable",
-        "shim"
-      ],
-      "funding": [
-        {
-          "url": "https://symfony.com/sponsor",
-          "type": "custom"
-        },
-        {
-          "url": "https://github.com/fabpot",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2020-06-06T08:46:27+00:00"
-    },
-    {
       "name": "twig/twig",
       "version": "v3.0.3",
       "source": {
@@ -427,82 +220,6 @@
         "templating"
       ],
       "time": "2020-02-11T15:33:47+00:00"
-    },
-    {
-      "name": "vlucas/phpdotenv",
-      "version": "v5.0.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/vlucas/phpdotenv.git",
-        "reference": "fbb6a5f65512f21d0db9e21bd49e67f70a9bbd5e"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/fbb6a5f65512f21d0db9e21bd49e67f70a9bbd5e",
-        "reference": "fbb6a5f65512f21d0db9e21bd49e67f70a9bbd5e",
-        "shasum": ""
-      },
-      "require": {
-        "ext-pcre": "*",
-        "graham-campbell/result-type": "^1.0.1",
-        "php": "^7.1.3 || ^8.0",
-        "phpoption/phpoption": "^1.7.4",
-        "symfony/polyfill-ctype": "^1.17",
-        "symfony/polyfill-mbstring": "^1.17",
-        "symfony/polyfill-php80": "^1.17"
-      },
-      "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.4.1",
-        "ext-filter": "*",
-        "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0"
-      },
-      "suggest": {
-        "ext-filter": "Required to use the boolean validator."
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "5.0-dev"
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "Dotenv\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "BSD-3-Clause"
-      ],
-      "authors": [
-        {
-          "name": "Graham Campbell",
-          "email": "graham@alt-three.com",
-          "homepage": "https://gjcampbell.co.uk/"
-        },
-        {
-          "name": "Vance Lucas",
-          "email": "vance@vancelucas.com",
-          "homepage": "https://vancelucas.com/"
-        }
-      ],
-      "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
-      "keywords": [
-        "dotenv",
-        "env",
-        "environment"
-      ],
-      "funding": [
-        {
-          "url": "https://github.com/GrahamCampbell",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2020-06-07T19:04:14+00:00"
     }
   ],
   "packages-dev": [
@@ -1189,16 +906,16 @@
         }
       },
       "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
+        "psr-4": {
+          "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
                 },
@@ -1447,20 +1164,20 @@
         "symfony/process": "^3.0 || ^4.0 || ^5.0",
         "symfony/stopwatch": "^3.0 || ^4.0 || ^5.0"
       },
-            "require-dev": {
-              "johnkary/phpunit-speedtrap": "^1.1 || ^2.0 || ^3.0",
-              "justinrainbow/json-schema": "^5.0",
-              "keradus/cli-executor": "^1.2",
-              "mikey179/vfsstream": "^1.6",
-              "php-coveralls/php-coveralls": "^2.1",
-              "php-cs-fixer/accessible-object": "^1.0",
-              "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.1",
-              "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.1",
-              "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.1",
-              "phpunitgoodpractices/traits": "^1.8",
-              "symfony/phpunit-bridge": "^5.1",
-              "symfony/yaml": "^3.0 || ^4.0 || ^5.0"
-            },
+      "require-dev": {
+        "johnkary/phpunit-speedtrap": "^1.1 || ^2.0 || ^3.0",
+        "justinrainbow/json-schema": "^5.0",
+        "keradus/cli-executor": "^1.2",
+        "mikey179/vfsstream": "^1.6",
+        "php-coveralls/php-coveralls": "^2.1",
+        "php-cs-fixer/accessible-object": "^1.0",
+        "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.1",
+        "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.1",
+        "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.1",
+        "phpunitgoodpractices/traits": "^1.8",
+        "symfony/phpunit-bridge": "^5.1",
+        "symfony/yaml": "^3.0 || ^4.0 || ^5.0"
+      },
             "suggest": {
               "ext-dom": "For handling output formats in XML",
               "ext-mbstring": "For handling non-UTF8 characters.",
@@ -2014,16 +1731,16 @@
         },
         {
           "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Library for handling version information and constraints",
-            "time": "2018-07-08T19:19:57+00:00"
-        },
-        {
-            "name": "php-cs-fixer/diff",
-            "version": "v1.3.0",
+          "email": "sebastian@phpunit.de",
+          "role": "Developer"
+        }
+      ],
+      "description": "Library for handling version information and constraints",
+      "time": "2018-07-08T19:19:57+00:00"
+    },
+    {
+      "name": "php-cs-fixer/diff",
+      "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/diff.git",
@@ -2065,13 +1782,13 @@
                 "name": "SpacePossum"
               }
             ],
-          "description": "sebastian/diff v2 backport support for PHP5.6",
-          "homepage": "https://github.com/PHP-CS-Fixer",
-          "keywords": [
-            "diff"
-          ],
-          "time": "2018-02-15T16:58:55+00:00"
-        },
+      "description": "sebastian/diff v2 backport support for PHP5.6",
+      "homepage": "https://github.com/PHP-CS-Fixer",
+      "keywords": [
+        "diff"
+      ],
+      "time": "2018-02-15T16:58:55+00:00"
+    },
     {
       "name": "php-webdriver/webdriver",
       "version": "1.8.2",
@@ -2344,16 +2061,16 @@
         }
       ],
       "description": "PHPMD is a spin-off project of PHP Depend and aims to be a PHP equivalent of the well known Java tool PMD.",
-            "homepage": "https://phpmd.org/",
-            "keywords": [
-                "mess detection",
-                "mess detector",
-                "pdepend",
-                "phpmd",
-                "pmd"
-            ],
-            "time": "2020-02-16T20:15:50+00:00"
-        },
+      "homepage": "https://phpmd.org/",
+      "keywords": [
+        "mess detection",
+        "mess detector",
+        "pdepend",
+        "phpmd",
+        "pmd"
+      ],
+      "time": "2020-02-16T20:15:50+00:00"
+    },
         {
             "name": "phpspec/prophecy",
             "version": "v1.10.3",
@@ -4621,14 +4338,14 @@
           "type": "custom"
         },
         {
-                "url": "https://github.com/fabpot",
-                "type": "github"
-              },
-              {
-                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                "type": "tidelift"
-              }
-            ],
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
       "time": "2020-05-27T08:34:37+00:00"
     },
     {
@@ -4843,26 +4560,26 @@
       "homepage": "https://symfony.com",
       "keywords": [
         "abstractions",
-                "contracts",
-                "decoupling",
-                "interfaces",
-                "interoperability",
-                "standards"
-            ],
-            "funding": [
-              {
-                "url": "https://symfony.com/sponsor",
-                "type": "custom"
-              },
-              {
-                "url": "https://github.com/fabpot",
-                "type": "github"
-              },
-              {
-                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                "type": "tidelift"
-              }
-            ],
+        "contracts",
+        "decoupling",
+        "interfaces",
+        "interoperability",
+        "standards"
+      ],
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
       "time": "2020-05-20T17:43:50+00:00"
     },
     {
@@ -5389,16 +5106,16 @@
       "dist": {
         "type": "zip",
         "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/f048e612a3905f34931127360bdd2def19a5e582",
-                "reference": "f048e612a3905f34931127360bdd2def19a5e582",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.17-dev"
+        "reference": "f048e612a3905f34931127360bdd2def19a5e582",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=5.3.3"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -5500,6 +5217,86 @@
         }
       ],
       "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+      "homepage": "https://symfony.com",
+      "keywords": [
+        "compatibility",
+        "polyfill",
+        "portable",
+        "shim"
+      ],
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2020-06-06T08:46:27+00:00"
+    },
+    {
+      "name": "symfony/polyfill-php80",
+      "version": "v1.17.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/polyfill-php80.git",
+        "reference": "4a5b6bba3259902e386eb80dd1956181ee90b5b2"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/4a5b6bba3259902e386eb80dd1956181ee90b5b2",
+        "reference": "4a5b6bba3259902e386eb80dd1956181ee90b5b2",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.0.8"
+      },
+      "type": "library",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "1.17-dev"
+        },
+        "thanks": {
+          "name": "symfony/polyfill",
+          "url": "https://github.com/symfony/polyfill"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Polyfill\\Php80\\": ""
+        },
+        "files": [
+          "bootstrap.php"
+        ],
+        "classmap": [
+          "Resources/stubs"
+        ]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Ion Bazan",
+          "email": "ion.bazan@gmail.com"
+        },
+        {
+          "name": "Nicolas Grekas",
+          "email": "p@tchwork.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
       "homepage": "https://symfony.com",
       "keywords": [
         "compatibility",

@@ -12,7 +12,6 @@
 	"require": {
 		"ext-json": "*",
 		"ext-tidy": "*",
-		"vlucas/phpdotenv": "^5.0.0",
 		"twig/twig": "^3.0.3"
 	},
 	"require-dev": {
