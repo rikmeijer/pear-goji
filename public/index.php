@@ -9,6 +9,6 @@ if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'],
     <title>𓀁</title>
 </head>
 <body>
-<label for="query">Label</label><input type="text" id="query" placeholder="Stel een vraag">
+<label for="query"><input type="text" id="query" placeholder="Stel een vraag"></label>
 </body>
 </html>
