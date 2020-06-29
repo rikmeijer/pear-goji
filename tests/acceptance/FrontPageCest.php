@@ -39,4 +39,13 @@ final class FrontPageCest
         $I->amOnPage('/');
         $I->see('𓀁', 'h1');
     }
+
+    public function WhenQuestionSubmittedExpectLandingOnAnswersPage(AcceptanceTester $I): void
+    {
+        $I->amOnPage('/');
+        $I->submitForm('body > form', [
+            'question' => 'How many roads must a man walk down, before you can call him a man?'
+        ]);
+        $I->seeInCurrentUrl('/answers');
+    }
 }
