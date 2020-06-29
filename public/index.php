@@ -10,7 +10,7 @@ if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'],
 </head>
 <body>
 <h1>𓀁</h1>
-<form action="/answers">
+<form action="/answers" method="post">
     <label for="query"><input type="text" id="query" placeholder="Stel een vraag"></label>
 </form>
 </body>
