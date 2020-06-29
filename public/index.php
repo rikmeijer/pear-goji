@@ -15,7 +15,7 @@ if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'],
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo $twig->render('answers.html', []);
+    echo $twig->render('answers.twig', []);
 } else {
-    echo $twig->render('index.html', []);
+    echo $twig->render('index.twig', []);
 }
