@@ -16,7 +16,7 @@ final class FrontPageCest
 
     // tests
 
-    public function WhenVisitingFrontPageExpectTitleToBeMawihatomo(AcceptanceTester $I): void
+    public function WhenVisitingFrontPageExpectTitleToBeMAWIHATOMO(AcceptanceTester $I): void
     {
         $I->amOnPage('/');
         $I->seeInTitle('𓀁');
@@ -32,5 +32,11 @@ final class FrontPageCest
     {
         $I->amOnPage('/');
         $I->seeElement('input[type=text]', ['placeholder' => 'Stel een vraag']);
+    }
+
+    public function WhenVisitingFrontPageExpectSeeingMAWIHATOMOAsTitleElement(AcceptanceTester $I): void
+    {
+        $I->amOnPage('/');
+        $I->see('𓀁', 'h1');
     }
 }
