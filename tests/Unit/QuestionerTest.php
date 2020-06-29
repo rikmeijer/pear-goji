@@ -2,12 +2,15 @@
 
 namespace rikmeijer\𓀁\tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Codeception\Test\Unit;
 use rikmeijer\𓀁\Questioner;
 
-class QuestionerTest extends TestCase
+final class QuestionerTest extends Unit
 {
-    public function testWhen_QuestionerAsksQuestion_Expect_QuestionBelongingToQuestioner()
+    /**
+     * @test
+     */
+    public function WhenQuestionerAsksQuestionExpectQuestionBelongingToQuestioner(): void
     {
         $questioner = new Questioner();
 
@@ -16,7 +19,10 @@ class QuestionerTest extends TestCase
         $this->assertTrue($question->belongsTo($questioner));
     }
 
-    public function testWhen_QuestionerAsksQuestion_Expect_QuestionBelongingToThatQuestionerAndNotAnotherQuestioner()
+    /**
+     * @test
+     */
+    public function WhenQuestionerAsksQuestionExpectQuestionBelongingToThatQuestionerAndNotAnotherQuestioner(): void
     {
         $questioner = new Questioner();
         $questioner2 = new Questioner();

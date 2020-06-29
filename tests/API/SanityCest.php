@@ -11,18 +11,13 @@ final class SanityCest
     {
     }
 
-    // tests
-    public function tryToTest(ApiTester $I): void
-    {
-    }
-
-    public function testAPIAvailable(ApiTester $I): void
+    public function ExpectAPIAvailable(ApiTester $I): void
     {
         $I->sendGET('/');
         $I->seeResponseCodeIs(HttpCode::OK);
     }
 
-    public function testAPI_When_AcceptApplication_JSON_Expect_JSONResponse(ApiTester $I): void
+    public function WhenSendingHeaderAcceptWithApplication_JSONExpectJSONResponse(ApiTester $I): void
     {
         $I->haveHttpHeader('Accept', 'application/json');
         $I->sendGET('/');
@@ -31,7 +26,7 @@ final class SanityCest
         $I->seeResponseContainsJson(['status' => 'ok']);
     }
 
-    public function testAPI_When_AcceptTextHTML_Expect_HTMLResponse(ApiTester $I): void
+    public function WhenSendingHeaderAcceptText_HTMLExpectHTMLResponse(ApiTester $I): void
     {
         $I->haveHttpHeader('Accept', 'text/html');
         $I->sendGET('/');
