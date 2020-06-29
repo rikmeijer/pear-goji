@@ -3,6 +3,7 @@
 namespace rikmeijer\𓀁\tests\acceptance;
 
 use AcceptanceTester;
+use Page\Acceptance\FrontPage;
 
 final class FrontPageCest
 {
@@ -40,12 +41,18 @@ final class FrontPageCest
         $I->see('𓀁', 'h1');
     }
 
-    public function WhenQuestionSubmittedExpectLandingOnAnswersPage(AcceptanceTester $I): void
+    public function WhenQuestionSubmittedExpectLandingOnAnswersPage(AcceptanceTester $I, FrontPage $page): void
     {
-        $I->amOnPage('/');
-        $I->submitForm('body > form', [
-            'question' => 'How many roads must a man walk down, before you can call him a man?'
-        ]);
+        $page->submitQuestion('How many roads must a man walk down, before you can call him a man?');
+
         $I->dontSeeInCurrentUrl('?question=');
+    }
+
+    public function WhenQuestionSubmittedExpectQuestionFieldToBeGone(AcceptanceTester $I, FrontPage $page): void
+    {
+        $page->submitQuestion('How many roads must a man walk down, before you can call him a man?');
+
+        $I->see('Answers', 'h1');
+        $I->dontSeeElement('input[type=text]', ['placeholder' => 'Stel een vraag']);
     }
 }
