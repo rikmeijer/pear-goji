@@ -12,7 +12,8 @@
 	"require": {
 		"ext-json": "*",
 		"ext-tidy": "*",
-		"twig/twig": "^3.0.3"
+		"twig/twig": "^3.0.3",
+		"rikmeijer/bootstrap": "^2.0.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
