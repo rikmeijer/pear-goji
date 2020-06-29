@@ -1,10 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace rikmeijer\𓀁\tests\acceptance;
 
 use AcceptanceTester;
 
-final class IndexCest
+final class FrontPageCest
 {
     public function _before(AcceptanceTester $I): void
     {
@@ -28,7 +28,7 @@ final class IndexCest
         $I->seeValidHTML($I->grabPageSource());
     }
 
-    public function WhenVisitingIndexExpectTextFieldAvailable(AcceptanceTester $I): void
+    public function WhenVisitingFrontPageExpectTextFieldAvailable(AcceptanceTester $I): void
     {
         $I->amOnPage('/');
         $I->seeElement('input[type=text]', ['placeholder' => 'Stel een vraag']);
