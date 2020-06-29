@@ -46,7 +46,6 @@ final class FrontPageCest
         $I->submitForm('body > form', [
             'question' => 'How many roads must a man walk down, before you can call him a man?'
         ]);
-        $I->seeInCurrentUrl('/answers');
         $I->dontSeeInCurrentUrl('?question=');
     }
 }
