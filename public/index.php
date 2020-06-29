@@ -10,9 +10,9 @@ if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'],
     header('Content-Type: application/json');
     $template = 'api/index.json';
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $template = 'answers.twig';
+    $template = 'web/answers.twig';
 } else {
-    $template = 'index.twig';
+    $template = 'web/index.twig';
 }
 
 echo $twig->render($template, $variables);
