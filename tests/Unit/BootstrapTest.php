@@ -89,6 +89,15 @@ final class BootstrapTest extends TestCase
 
         $this->assertEquals(self::class . 'Get', $parameters['_controller']);
         $this->assertEquals('GET-index', $parameters['_route']);
+
+
+        $matcher = $this->object->resource('router')(new RequestContext('/', 'POST'));
+        $this->assertInstanceOf(UrlMatcher::class, $matcher);
+
+        $parameters = $matcher->match('/');
+
+        $this->assertEquals(self::class . 'Post', $parameters['_controller']);
+        $this->assertEquals('POST-index', $parameters['_route']);
     }
 
     protected function tearDown(): void
