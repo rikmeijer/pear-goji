@@ -16,23 +16,4 @@ final class SanityCest
         $I->sendGET('/');
         $I->seeResponseCodeIs(HttpCode::OK);
     }
-
-    public function WhenSendingHeaderAcceptWithApplication_JSONExpectJSONResponse(ApiTester $I): void
-    {
-        $I->haveHttpHeader('Accept', 'application/json');
-        $I->sendGET('/');
-        $I->seeResponseCodeIs(HttpCode::OK);
-        $I->seeHttpHeader('Content-Type', 'application/json');
-        $I->seeResponseIsJson();
-        $I->seeResponseContainsJson(['status' => 'ok']);
-    }
-
-    public function WhenSendingHeaderAcceptText_HTMLExpectHTMLResponse(ApiTester $I): void
-    {
-        $I->haveHttpHeader('Accept', 'text/html');
-        $I->sendGET('/');
-        $I->seeResponseCodeIs(HttpCode::OK);
-        $I->seeHttpHeader('Content-Type', 'text/html; charset=UTF-8');
-        $I->seeResponseContains('<!doctype html>');
-    }
 }

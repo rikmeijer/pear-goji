@@ -19,11 +19,4 @@ $twig = $bootstrap->resource('twig');
 $controller = new $route['_controller']();
 $twigArguments = $controller();
 
-$variables = [];
-if (array_key_exists('HTTP_ACCEPT', $_SERVER) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false) {
-    header('Content-Type: application/json');
-    $twigArguments[0] = 'api/index.json';
-    $twigArguments[1] = [];
-}
-
 echo $twig->render($twigArguments[0], $twigArguments[1]);
