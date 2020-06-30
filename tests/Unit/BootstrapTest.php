@@ -4,6 +4,7 @@ namespace rikmeijer\𓀁\tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use rikmeijer\Bootstrap\Bootstrap;
+use Symfony\Component\Routing\Exception\NoConfigurationException;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 
@@ -25,30 +26,10 @@ final class BootstrapTest extends TestCase
     /**
      * @test
      */
-    public function Router_WhenNoRoutesConfigured_ExpectError(): void
+    public function Routes_WhenNoRoutesConfigured_ExpectError(): void
     {
-        $this->expectErrorMessage('No routes configured');
-        $this->object->resource('router');
-    }
-
-    /**
-     * @test
-     */
-    public function Router_WhenRouteConfigured_ExpectMatcherMatchingRoute(): void
-    {
-        file_put_contents(
-            $this->configurationPath . DIRECTORY_SEPARATOR . 'config.defaults.php',
-            '<?php return ' . var_export(
-                [
-                    'router' => [
-                        'routes' => ['index' => ['/', self::class]]
-                    ]
-                ],
-                true
-            ) . ';'
-        );
-
-        $matcher = $this->object->resource('router')(new RequestContext('/'));
+        $this->expectException(NoConfigurationException::class);
+        $matcher = $this->object->resource('routes')->createMatcherForRequestContext(new RequestContext('/'));
         $this->assertInstanceOf(UrlMatcher::class, $matcher);
 
         $parameters = $matcher->match('/');
@@ -60,29 +41,54 @@ final class BootstrapTest extends TestCase
     /**
      * @test
      */
-    public function Router_WhenRouteWithMultipleMethodsConfigured_ExpectMatcherMatchingRouteByMethod(): void
+    public function Routes_WhenRouteConfigured_ExpectMatcherMatchingRoute(): void
     {
         file_put_contents(
             $this->configurationPath . DIRECTORY_SEPARATOR . 'config.defaults.php',
             '<?php return ' . var_export(
                 [
-                    'router' => [
-                        'routes' => [
-                            'index' => [
-                                '/',
-                                [
-                                    'GET' => self::class . 'Get',
-                                    'POST' => self::class . 'Post'
-                                ]
-                            ]
-                        ]
-                    ]
+                    'routes' => ['index' => ['/', self::class]]
                 ],
                 true
             ) . ';'
         );
 
-        $matcher = $this->object->resource('router')(new RequestContext('/'));
+        $matcher = $this->object->resource('routes')->createMatcherForRequestContext(new RequestContext('/'));
+        $this->assertInstanceOf(UrlMatcher::class, $matcher);
+
+        $parameters = $matcher->match('/');
+
+        $this->assertEquals(self::class, $parameters['_controller']);
+        $this->assertEquals('index', $parameters['_route']);
+    }
+
+    /**
+     * @test
+     */
+    public function Routes_WhenRouteWithMultipleMethodsConfigured_ExpectMatcherMatchingRouteByMethod(): void
+    {
+        file_put_contents(
+            $this->configurationPath . DIRECTORY_SEPARATOR . 'config.defaults.php',
+            '<?php return ' . var_export(
+                [
+                    'routes' => [
+                        'index' => [
+                            '/',
+                            [
+                                'GET' => self::class . 'Get',
+                                'POST' => self::class . 'Post'
+                            ]
+                        ]
+                    ]
+
+                ],
+                true
+            ) . ';'
+        );
+
+        $routes = $this->object->resource('routes');
+
+        $matcher = $routes->createMatcherForRequestContext(new RequestContext('/'));
         $this->assertInstanceOf(UrlMatcher::class, $matcher);
 
         $parameters = $matcher->match('/');
@@ -91,7 +97,7 @@ final class BootstrapTest extends TestCase
         $this->assertEquals('GET-index', $parameters['_route']);
 
 
-        $matcher = $this->object->resource('router')(new RequestContext('/', 'POST'));
+        $matcher = $routes->createMatcherForRequestContext(new RequestContext('/', 'POST'));
         $this->assertInstanceOf(UrlMatcher::class, $matcher);
 
         $parameters = $matcher->match('/');
