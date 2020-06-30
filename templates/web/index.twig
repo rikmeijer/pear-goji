@@ -1,7 +1,5 @@
 {% extends "web/html5.twig" %}
 {% block body %}
 	<h1>𓀁</h1>
-	<form method="post">
-		<label for="query"><input id="query" placeholder="Stel een vraag" type="text"></label>
-	</form>
+	{% include('web/question.twig') %}
 {% endblock %}
