@@ -11,6 +11,8 @@ extensions:
 coverage:
   enabled: true
   include:
+    - bootstrap/*
     - src/*
   low_limit: 30
   high_limit: 60
+

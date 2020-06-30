@@ -8,10 +8,7 @@ actor: AcceptanceTester
 modules:
   enabled:
     - PhpBrowser:
-        url: http://127.0.0.1:8080
+        url: http://localhost:80
     - Helper\Acceptance
 extensions:
-  enabled:
-    - Codeception\Extension\RunProcess:
-        - php -S 127.0.0.1:8080 -t public
   step_decorators: ~
